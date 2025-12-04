@@ -9,6 +9,8 @@ import "@openzeppelin/contracts/access/Ownable.sol";
  * @notice Handles bounty deposits and payouts with a 5% platform fee.
  */
 contract GitGigPayments is Ownable {
+    string public constant name = "GitGig Payments";
+    
     IERC20 public immutable USDC;
 
     // issueId → bounty amount
