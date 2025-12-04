@@ -14,9 +14,9 @@ contract GitGigPayments is Ownable {
     // issueId → bounty amount
     mapping(uint256 => uint256) public bounties;
 
-    // Flat 5% fee
+    // Flat 5% fee (deposit includes fee, so total is 105%)
     uint256 public constant FEE_BPS = 500;  // 500 = 5%
-    uint256 public constant BPS_DENOMINATOR = 10_000;
+    uint256 public constant BPS_DENOMINATOR = 10_500;  // 10,500 because deposit is 105% (100% + 5%)
 
     event Deposited(uint256 indexed issueId, uint256 amount, address indexed funder);
     event PaidOut(
